@@ -1,0 +1,98 @@
+Fequencia sentimentos
+Positivo    49
+Neutro      11
+Negativo     2
+Name: Classificacao do sentimento, dtype: int64
+
+
+
+Porcentagem sentimentos
+Positivo    0.790323
+Neutro      0.177419
+Negativo    0.032258
+Name: Classificacao do sentimento, dtype: float64
+
+
+
+MEMBROS COM SENTIMENTOS NEGATIVOS
+Membro: Lucas Bender | Lider: Felipe Adamoli
+Membro: Matheus Cruz | Lider: Gustavo Pinho
+
+TOTAL: 2
+PORCENTAGEM: 3.125%
+
+
+
+MEMBROS QUE NAO RESPONDERAM AO SENTIMENTO DA SEMANA
+Membro: Bruno Braga | Lider: Gustavo Pinho
+Membro: Daniel Nunez | Lider: Gustavo Pinho
+
+TOTAL: 2
+PORCENTAGEM: 3.125%
+
+
+
+RESPOSTAS SEM TAGS
+Membro: Bruno Braga | Lider: Gustavo Pinho
+Membro: Lucas Barbosa | Lider: Juliano Reis
+Membro: Daniel Nunez | Lider: Gustavo Pinho
+
+TOTAL: 3
+PORCENTAGEM: 4.6875%
+
+
+
+RESPOSTAS SEM COMENTARIOS
+Membro: Marina Isabel | Lider: Bruno Braga
+Membro: Matheus
+Membro: Guilherme Vahl | Lider: Rafael Haertel
+Membro: Rafael Haertel | Lider: João Pedro
+Membro: Bruno Braga | Lider: Gustavo Pinho
+Membro: Italo Nolasco | Lider: Gustavo Pinho
+Membro: Juliano Reis | Lider: João Pedro
+Membro: Guilherme Magnabosco | Lider: Glauber Castro
+Membro: Ederson Gonçalves | Lider: Gustavo Pinho
+Membro: Allan Miraballes | Lider: Rafael Schumacher
+Membro: Brian Icaro Marques | Lider: Eduardo Bittencourt
+Membro: Miguel Scherdien | Lider: Matheus
+Membro: Gabriel Carrilhos | Lider: Erico Grehs
+Membro: Guilherme Rodrigues | Lider: Gustavo Pinho
+Membro: Glauber Castro | Lider: Gustavo Pinho
+Membro: Richard Tutchtenhagen | Lider: Christian Tavares
+Membro: Daniel Nunez | Lider: Gustavo Pinho
+Membro: Arthur Ferreira | Lider: Gabriel Couto
+
+TOTAL: 18
+PORCENTAGEM: 28.125%
+
+
+
+SENTIMENTOS COM COMENTARIOS POREM SEM RESPOSTA DO LIDER
+Membro: Dionatan Voss | Lider: Gabriel Couto
+Membro: Igor Casconi | Lider: Lucas Barbosa
+Membro: Thiago Batista | Lider: Matheus Cruz
+Membro: Monique Nogueira | Lider: Gabriel Couto
+Membro: Cleberson Cruz | Lider: Rafael Haertel
+Membro: Victoria | Lider: Matheus
+Membro: Gustavo Pinho | Lider: Felipe Adamoli
+Membro: Wesley Marques | Lider: Dionatan Voss
+Membro: Lennon Bandeira | Lider: Matheus
+Membro: Rafael Schumacher | Lider: Rafael Haertel
+Membro: Mikael Poetsch | Lider: Rafael Haertel
+Membro: Matheus Cruz | Lider: Gustavo Pinho
+Membro: Giuliane Oliveira | Lider: Matheus Cruz
+Membro: Matheus Blank | Lider: Miguel Scherdien
+Membro: Lucas Araujo | Lider: Gustavo Pinho
+Membro: Felipe Adamoli | Lider: Matheus
+Membro: Italo Silveira | Lider: Rafael Haertel
+Membro: Lucas Barbosa | Lider: Juliano Reis
+Membro: Rafael Candia | Lider: Lucas Barbosa
+Membro: Michael Costa | Lider: Gabriel Couto
+Membro: Jose Camargo | Lider: Gabriel Couto
+
+TOTAL: 21
+PORCENTAGEM: 32.8125%
+
+
+
+

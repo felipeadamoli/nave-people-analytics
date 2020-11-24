@@ -19,7 +19,7 @@ print('\n\n\nPorcentagem sentimentos')
 print(df['Classificacao do sentimento'].value_counts(normalize=True))
 
 
-print('\n\n\nPESSOAS COM SENTIMENTOS NEGATIVOS')
+print('\n\n\nMEMBROS COM SENTIMENTOS NEGATIVOS')
 for index, row in df.iterrows():
     if isinstance(row['Classificacao do sentimento'], str): 
         if row['Classificacao do sentimento'] == 'Negativo':
@@ -27,17 +27,18 @@ for index, row in df.iterrows():
             printLedAndLeader(row)
 printTotalAndPercentage(negativeFeelings, totalRowCount)
 
-printAnalyze('NAO RESPONDEU', df, 'Classificacao do sentimento')
+printAnalyze('MEMBROS QUE NAO RESPONDERAM AO SENTIMENTO DA SEMANA', df, 'Classificacao do sentimento')
 
-printAnalyze('SEM TAGS', df, 'Tags do sentimento')
+printAnalyze('RESPOSTAS SEM TAGS', df, 'Tags do sentimento')
 
-printAnalyze('SEM COMENTARIOS', df, 'Comentarios')
+printAnalyze('RESPOSTAS SEM COMENTARIOS', df, 'Comentarios')
 
 print('\n\n\nSENTIMENTOS COM COMENTARIOS POREM SEM RESPOSTA DO LIDER')
 for index, row in df.iterrows():
-    if isinstance(row['Comentarios'], str): 
-        if row['Nome do Lider'] not in row['Comentarios']:
-            withoutLeaderComments = withoutLeaderComments + 1
-            printLedAndLeader(row)
+    if isinstance(row['Comentarios'], str):
+        if isinstance(row['Nome do Lider'], str): 
+            if row['Nome do Lider'] not in row['Comentarios']:
+                withoutLeaderComments = withoutLeaderComments + 1
+                printLedAndLeader(row)
 printTotalAndPercentage(withoutLeaderComments, totalRowCount - withoutComments)
 print("\n\n\n")
