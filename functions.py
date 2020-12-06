@@ -18,3 +18,9 @@ def printAnalyze(title, df, analizedRow):
             printLedAndLeader(row)
             totalCount = totalCount + 1 
     printTotalAndPercentage(totalCount, len(df.index))
+
+def findLeaderComments(leader, comments):
+    if str(leader) not in comments: 
+        return True
+    else :
+        return False

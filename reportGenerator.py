@@ -4,6 +4,9 @@ from functions import calcPercentage
 from functions import printLedAndLeader
 from functions import printAnalyze
 from functions import printTotalAndPercentage
+from functions import findLeaderComments
+
+pd.options.mode.chained_assignment = None
 
 
 # df = pd.read_csv('sentimentos_old.csv')
@@ -21,6 +24,10 @@ rowsWithoutTags = withPulse[withPulse['Tags do sentimento'].isnull()]
 ## Analise existencia de comentarios
 rowsWithoutComments = withPulse[withPulse['Comentarios'].isnull()]
 rowsWithComments = withPulse[np.logical_not(withPulse['Comentarios'].isnull())]
+
+## Analise de sentimentos com comentarios de liderados sem resposta dos lideres
+rowsWithComments['Sem comentarios lider'] = rowsWithComments.apply(lambda row : findLeaderComments(row['Nome do Lider'], row['Comentarios']), axis = 1)
+rowsWithCommentsWithoutLeaderAnswer = rowsWithComments[rowsWithComments['Sem comentarios lider'] == True]
 
 print('Fequencia sentimentos')
 print(df['Classificacao do sentimento'].value_counts())
@@ -43,13 +50,6 @@ print('\n\n\nRESPOSTAS SEM COMENTARIOS')
 print(rowsWithoutComments[["Nome", "Nome do Lider"]])
 print(printTotalAndPercentage(len(rowsWithoutComments.index), withPulseRowCount))
 
-print('\n\n\nSENTIMENTOS COM COMENTARIOS POREM SEM RESPOSTA DO LIDER')
-withoutLeaderComments = 0
-for index, row in df.iterrows():
-    if isinstance(row['Comentarios'], str):
-        if isinstance(row['Nome do Lider'], str): 
-            if row['Nome do Lider'] not in row['Comentarios']:
-                withoutLeaderComments = withoutLeaderComments + 1
-                printLedAndLeader(row)
-printTotalAndPercentage(withoutLeaderComments, len(rowsWithComments.index))
-print("\n\n\n")
+print('\n\n\nSENTIMENTOS COM COMENTARIOS DO LIDERADO POREM SEM RESPOSTA DO LIDER')
+print(rowsWithCommentsWithoutLeaderAnswer[['Nome', 'Nome do Lider']])
+printTotalAndPercentage(len(rowsWithCommentsWithoutLeaderAnswer.index), len(rowsWithComments.index))
