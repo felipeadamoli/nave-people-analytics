@@ -19,7 +19,8 @@ withPulse = df[np.logical_not(df['Classificacao do sentimento'].isnull())]
 withPulseRowCount = len(withPulse.index)
 
 ## Analise existencia de tags
-rowsWithoutTags = withPulse[withPulse['Tags do sentimento'].isnull()]
+rowsWithoutPositiveTags = withPulse[withPulse['Tags positivas do sentimento'].isnull()]
+rowsWithoutNegativeTags = withPulse[withPulse['Tags negativas do sentimento'].isnull()]
 
 ## Analise existencia de comentarios
 rowsWithoutComments = withPulse[withPulse['Comentarios'].isnull()]
@@ -42,9 +43,13 @@ print('\n\n\nMEMBROS QUE NAO RESPONDERAM AO SENTIMENTO DA SEMANA')
 print(withoutPulse[["Nome", "Nome do Lider"]])
 print(printTotalAndPercentage(len(withoutPulse.index), totalRowCount))
 
-print('\n\n\nRESPOSTAS SEM TAGS')
-print(rowsWithoutTags[["Nome", "Nome do Lider"]])
-print(printTotalAndPercentage(len(rowsWithoutTags.index), withPulseRowCount))
+print('\n\n\nRESPOSTAS SEM TAGS POSITIVAS')
+print(rowsWithoutPositiveTags[["Nome", "Nome do Lider"]])
+print(printTotalAndPercentage(len(rowsWithoutPositiveTags.index), withPulseRowCount))
+
+print('\n\n\nRESPOSTAS SEM TAGS NEGATIVAS')
+print(rowsWithoutNegativeTags[["Nome", "Nome do Lider"]])
+print(printTotalAndPercentage(len(rowsWithoutNegativeTags.index), withPulseRowCount))
 
 print('\n\n\nRESPOSTAS SEM COMENTARIOS')
 print(rowsWithoutComments[["Nome", "Nome do Lider"]])
